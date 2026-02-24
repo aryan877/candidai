@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.local
+
+# Lockfiles
+uv.lock
+package-lock.json
+
+# Build artifacts
+tsconfig.tsbuildinfo
+
+# Claude
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.fastembed_cache/
+
+# Model weights
+*.pt
+
+# Node
+node_modules/
+.next/
