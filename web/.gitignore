@@ -1,0 +1,6 @@
+
+.env.local
+
+# Lockfiles & build
+package-lock.json
+tsconfig.tsbuildinfo

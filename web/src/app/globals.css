@@ -1,0 +1,331 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #111111;
+  --color-foreground: #e8e8e8;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Neutral palette */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+
+  /* Interview phase colors — muted, functional only */
+  --color-phase-intro: #6b8aaf;
+  --color-phase-technical: #8b8bb0;
+  --color-phase-coding: #6b9b8a;
+  --color-phase-behavioral: #b0a06b;
+  --color-phase-closing: #7b7baf;
+
+  /* No brand colors — neutral only */
+  --color-brand-teal: #a1a1aa;
+  --color-brand-indigo: #a1a1aa;
+  --color-brand-cyan: #a1a1aa;
+  --color-brand-violet: #a1a1aa;
+
+  /* Component colors — neutral greys */
+  --color-primary: #e8e8e8;
+  --color-primary-foreground: #111111;
+  --color-secondary: #1e1e1e;
+  --color-secondary-foreground: #e8e8e8;
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #888888;
+  --color-accent: #1e1e1e;
+  --color-accent-foreground: #e8e8e8;
+  --color-destructive: #c45050;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #2a2a2a;
+  --color-input: #2a2a2a;
+  --color-ring: #525252;
+  --color-card: #181818;
+  --color-card-foreground: #e8e8e8;
+  --color-popover: #181818;
+  --color-popover-foreground: #e8e8e8;
+
+  --radius: 0.625rem;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ─── Surface styles (replacing glassmorphism) ──── */
+
+.glass {
+  background: #181818;
+}
+
+.glass-border {
+  border: 1px solid #2a2a2a;
+}
+
+.glass-card {
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius);
+}
+
+.glass-strong {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+}
+
+/* ─── Text + Border Utilities (replacing gradients) ─ */
+
+.gradient-text {
+  color: #e8e8e8;
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: #3a3a3a;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* ─── Subtle backgrounds ─────────────────────────── */
+
+.bg-grid-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-gradient-radial {
+  background: transparent;
+}
+
+.bg-gradient-radial-center {
+  background: transparent;
+}
+
+/* ─── Hover effect (replacing glow) ──────────────── */
+
+.glow {
+  /* no glow — clean flat */
+}
+
+.glow-teal {
+  /* no glow */
+}
+
+.glow-lg {
+  /* no glow */
+}
+
+.hover-glow {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.hover-glow:hover {
+  background: #1e1e1e;
+  border-color: #3a3a3a;
+}
+
+/* ─── Animations ─────────────────────────────────── */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.02),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Staggered fade-in for children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in-up 0.35s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 60ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 180ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 300ms; }
+
+/* ─── Noise Overlay ──────────────────────────────── */
+
+.noise-overlay::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.012;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ─── Custom Scrollbar ───────────────────────────── */
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Respect reduced motion preferences ─────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
