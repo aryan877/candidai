@@ -102,8 +102,8 @@ cp web/.env-example.local web/.env.local
 
 # Agent
 cp agent/.env.example agent/.env
-# Fill in: OPENROUTER_API_KEY, STREAM_API_KEY, STREAM_API_SECRET,
-#          DEEPGRAM_API_KEY, ELEVENLABS_API_KEY, DATABASE_URL
+# Fill in: OPENAI_API_KEY, STREAM_API_KEY, STREAM_API_SECRET,
+#          DEEPGRAM_API_KEY, DATABASE_URL
 ```
 
 ### 3. Run
@@ -149,7 +149,7 @@ cd agent && uv run python main.py serve --host 0.0.0.0 --port 8765
 candidai/
 ├── agent/                     # Python backend (Vision Agents SDK)
 │   ├── main.py                # Entry point: Runner + AgentLauncher CLI
-│   ├── candidai_agent.py      # Agent factory, 8 function tools, event wiring
+│   ├── candidai_agent.py      # Agent factory, 10 function tools, event wiring
 │   ├── pose_processor.py      # YOLO pose → body language metrics
 │   ├── events.py              # Custom PluginBaseEvent definitions
 │   ├── instructions.md        # System prompt (5-phase interview flow)
@@ -184,14 +184,16 @@ candidai/
 
 ### AI Interviewer Agent
 
-The agent uses 8 function tools to orchestrate the interview:
+The agent uses 10 function tools to orchestrate the interview:
 
 | Tool | Purpose |
 |------|---------|
+| `search_knowledge_base` | Query RAG for relevant interview questions |
 | `set_expression` | Control avatar facial expressions (10 types) |
 | `nod_head` | Trigger head nod animation |
 | `raise_eyebrows` | Trigger eyebrow raise animation |
 | `score_response` | Score candidate on 5 dimensions (0-10) |
+| `present_mcq` | Show multiple-choice questions on screen |
 | `present_coding_challenge` | Send coding problem with starter code |
 | `evaluate_code` | AI-evaluate submitted code |
 | `transition_phase` | Move to next interview phase |
