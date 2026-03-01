@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" fill="none">
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .title { font-size: 13px; font-weight: 700; fill: #fff; }
+    .item { font-size: 11px; fill: #cbd5e1; }
+    .label { font-size: 11px; font-weight: 600; fill: #94a3b8; }
+    .arrow-label { font-size: 12px; font-weight: 700; fill: #a78bfa; }
+    .sub { font-size: 10px; fill: #64748b; }
+  </style>
+
+  <!-- Background -->
+  <rect width="960" height="520" rx="12" fill="#0f172a"/>
+
+  <!-- Browser Box -->
+  <rect x="40" y="40" width="320" height="280" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="40" y="40" width="320" height="40" rx="12" fill="#3b82f6"/>
+  <rect x="40" y="68" width="320" height="12" fill="#3b82f6"/>
+  <text x="200" y="66" text-anchor="middle" class="title">Browser (Next.js 15)</text>
+
+  <circle cx="72" cy="112" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="112" r="3" fill="#3b82f6"/>
+  <text x="88" y="116" class="item">React 19 + Tailwind v4</text>
+
+  <circle cx="72" cy="142" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="142" r="3" fill="#3b82f6"/>
+  <text x="88" y="146" class="item">Monaco Code Editor</text>
+
+  <circle cx="72" cy="172" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="172" r="3" fill="#3b82f6"/>
+  <text x="88" y="176" class="item">SVG Avatar (Framer Motion)</text>
+
+  <circle cx="72" cy="202" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="202" r="3" fill="#3b82f6"/>
+  <text x="88" y="206" class="item">Recharts (Reports)</text>
+
+  <circle cx="72" cy="232" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="232" r="3" fill="#3b82f6"/>
+  <text x="88" y="236" class="item">Convex Client</text>
+
+  <circle cx="72" cy="262" r="6" fill="#3b82f6" opacity="0.3"/><circle cx="72" cy="262" r="3" fill="#3b82f6"/>
+  <text x="88" y="266" class="item">shadcn/ui Components</text>
+
+  <!-- Agent Box -->
+  <rect x="600" y="40" width="320" height="280" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="600" y="40" width="320" height="40" rx="12" fill="#8b5cf6"/>
+  <rect x="600" y="68" width="320" height="12" fill="#8b5cf6"/>
+  <text x="760" y="66" text-anchor="middle" class="title">Python Agent (Vision Agents SDK)</text>
+
+  <circle cx="632" cy="112" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="112" r="3" fill="#8b5cf6"/>
+  <text x="648" y="116" class="item">Gemini Flash (LLM via OpenRouter)</text>
+
+  <circle cx="632" cy="142" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="142" r="3" fill="#8b5cf6"/>
+  <text x="648" y="146" class="item">Deepgram STT (flux-general-en)</text>
+
+  <circle cx="632" cy="172" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="172" r="3" fill="#8b5cf6"/>
+  <text x="648" y="176" class="item">Edge TTS (en-US-AriaNeural)</text>
+
+  <circle cx="632" cy="202" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="202" r="3" fill="#8b5cf6"/>
+  <text x="648" y="206" class="item">YOLO Pose (yolo11n-pose.pt)</text>
+
+  <circle cx="632" cy="232" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="232" r="3" fill="#8b5cf6"/>
+  <text x="648" y="236" class="item">Smart Turn Detection</text>
+
+  <circle cx="632" cy="262" r="6" fill="#8b5cf6" opacity="0.3"/><circle cx="632" cy="262" r="3" fill="#8b5cf6"/>
+  <text x="648" y="266" class="item">PostgreSQL + pgvector (RAG)</text>
+
+  <!-- WebRTC Arrow -->
+  <defs>
+    <linearGradient id="arrow-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect x="390" y="155" width="180" height="36" rx="18" fill="url(#arrow-grad)" opacity="0.15"/>
+  <line x1="370" y1="173" x2="590" y2="173" stroke="url(#arrow-grad)" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <polygon points="590,165 605,173 590,181" fill="#8b5cf6"/>
+  <polygon points="370,165 355,173 370,181" fill="#3b82f6"/>
+  <text x="480" y="177" text-anchor="middle" class="arrow-label">WebRTC (Stream)</text>
+
+  <!-- Convex DB Box -->
+  <rect x="140" y="380" width="220" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="140" y="380" width="220" height="36" rx="12" fill="#14b8a6"/>
+  <rect x="140" y="404" width="220" height="12" fill="#14b8a6"/>
+  <text x="250" y="404" text-anchor="middle" class="title">Convex Cloud (DB)</text>
+  <text x="250" y="440" text-anchor="middle" class="item">7 tables: users, interviews,</text>
+  <text x="250" y="456" text-anchor="middle" class="item">reports, scores, transcripts,</text>
+  <text x="250" y="472" text-anchor="middle" class="item">codeSubmissions, bodyLanguage</text>
+
+  <!-- Arrow from Browser to Convex -->
+  <line x1="200" y1="320" x2="200" y2="370" stroke="#14b8a6" stroke-width="2" stroke-dasharray="6 4"/>
+  <polygon points="192,370 200,383 208,370" fill="#14b8a6"/>
+  <text x="215" y="350" class="label">persist</text>
+
+  <!-- Custom Events label -->
+  <rect x="680" y="380" width="180" height="80" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="770" y="404" text-anchor="middle" class="label">Custom Events</text>
+  <text x="770" y="422" text-anchor="middle" class="sub">avatar · scores · phases</text>
+  <text x="770" y="438" text-anchor="middle" class="sub">body language · transcripts</text>
+  <text x="770" y="454" text-anchor="middle" class="sub">coding challenges · reports</text>
+
+  <!-- Arrow from Agent to Events -->
+  <line x1="760" y1="320" x2="760" y2="370" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="6 4"/>
+  <polygon points="752,370 760,383 768,370" fill="#8b5cf6"/>
+</svg>

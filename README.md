@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="web/public/logo.png" width="120" alt="CandidAI">
+  <img src="web/public/logo-sm.png" width="120" alt="CandidAI">
 </p>
 
 <h1 align="center">CandidAI</h1>
@@ -37,24 +37,17 @@
 
 ## Architecture
 
-```
-Browser (Next.js 15)              Python Agent (Vision Agents SDK)
-┌──────────────────────┐          ┌──────────────────────────────┐
-│  React 19 + Tailwind │◄─WebRTC─►│  Gemini 3 Flash (LLM)        │
-│  Monaco Editor       │ (Stream) │  Deepgram STT (flux-general)  │
-│  SVG Avatar (Framer) │          │  ElevenLabs TTS (flash v2.5)  │
-│  Recharts (reports)  │          │  YOLO Pose (yolo11n-pose.pt)  │
-│  Convex Client       │          │  Smart Turn Detection          │
-└────────┬─────────────┘          │  PostgreSQL + pgvector (RAG)   │
-         │                        └──────────────────────────────┘
-         ▼
-   Convex Cloud (DB)
-   7 tables: users, interviews, reports,
-   scores, transcripts, codeSubmissions,
-   bodyLanguageSnapshots, cheatingIncidents
-```
+<p align="center">
+  <img src="web/public/architecture.svg" alt="CandidAI Architecture" width="800">
+</p>
 
-**Data flow:** The browser connects to the Python agent over WebRTC (via Stream Video). The agent sends custom events for avatar control, transcript updates, phase transitions, score updates, coding challenges, and body language metrics. The frontend persists all data to Convex in real-time.
+The browser connects to the Python agent over **WebRTC** via Stream's edge network. The agent sends custom events for avatar control, transcript updates, phase transitions, score updates, coding challenges, and body language metrics. The frontend persists all data to Convex in real-time.
+
+### Data Flow
+
+<p align="center">
+  <img src="web/public/dataflow.svg" alt="CandidAI Data Flow" width="800">
+</p>
 
 ---
 
@@ -89,7 +82,7 @@ Browser (Next.js 15)              Python Agent (Vision Agents SDK)
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/your-org/candidai.git
+git clone https://github.com/aryan877/candidai.git
 cd candidai
 
 # Frontend
@@ -331,8 +324,12 @@ cd web && npx convex dev
 ## Built With
 
 <p align="center">
+  <img src="web/public/vision-agents-sdk.png" alt="Vision Agents SDK" width="500">
+</p>
+
+<p align="center">
   Built for the <b>Vision Possible: Agent Protocol</b> hackathon using the
-  <a href="https://github.com/anthropics/vision-agents">Vision Agents SDK</a>.
+  <a href="https://visionagents.ai">Vision Agents SDK</a> by Stream.
 </p>
 
 ---
