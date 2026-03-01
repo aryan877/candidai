@@ -1,130 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6d28d9"/><stop offset="100%" stop-color="#4c1d95"/></linearGradient>
+  </defs>
   <style>
-    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    .col-title { font-size: 14px; font-weight: 700; fill: #fff; }
-    .flow-label { font-size: 10px; font-weight: 600; fill: #e2e8f0; }
-    .sub-label { font-size: 9px; fill: #94a3b8; }
-    .component { font-size: 10px; fill: #cbd5e1; }
+    text{font-family:system-ui,-apple-system,sans-serif}
+    .h{font-size:15px;font-weight:700;fill:#fff}
+    .t{font-size:11px;fill:#cbd5e1}
+    .s{font-size:10px;fill:#94a3b8}
+    .b{font-size:11px;font-weight:600;fill:#e2e8f0}
   </style>
 
-  <rect width="960" height="400" rx="12" fill="#0f172a"/>
+  <rect width="900" height="460" rx="16" fill="#0f172a"/>
 
-  <!-- Column 1: Browser -->
-  <rect x="40" y="30" width="200" height="340" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-  <rect x="40" y="30" width="200" height="36" rx="12" fill="#3b82f6"/>
-  <rect x="40" y="54" width="200" height="12" fill="#3b82f6"/>
-  <text x="140" y="54" text-anchor="middle" class="col-title">Browser</text>
-  <!-- Webcam icon -->
-  <circle cx="140" cy="110" r="28" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
-  <rect x="124" y="98" width="32" height="22" rx="4" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-  <polygon points="156,102 168,96 168,122 156,116" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="140" y="158" text-anchor="middle" class="component">Webcam + Mic</text>
-  <!-- Speaker icon -->
-  <circle cx="140" cy="210" r="22" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
-  <rect x="130" y="202" width="8" height="16" rx="1" fill="#3b82f6"/>
-  <polygon points="138,198 152,190 152,230 138,222" fill="none" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="140" y="250" text-anchor="middle" class="component">Speaker</text>
-  <!-- UI -->
-  <rect x="76" y="270" width="128" height="28" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
-  <text x="140" y="289" text-anchor="middle" class="component">Avatar + UI + Editor</text>
-  <!-- Events listen -->
-  <rect x="76" y="308" width="128" height="28" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
-  <text x="140" y="327" text-anchor="middle" class="component">call.on("custom")</text>
+  <!-- ========== BROWSER ========== -->
+  <rect x="30" y="30" width="220" height="400" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="30" y="30" width="220" height="42" rx="12" fill="#3b82f6"/>
+  <rect x="30" y="60" width="220" height="12" fill="#3b82f6"/>
+  <text x="140" y="58" text-anchor="middle" class="h">BROWSER</text>
 
-  <!-- Column 2: Stream SFU -->
-  <rect x="340" y="30" width="200" height="340" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-  <defs>
-    <linearGradient id="sfu-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#3b82f6"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
-  <rect x="340" y="30" width="200" height="36" rx="12" fill="url(#sfu-grad)"/>
-  <rect x="340" y="54" width="200" height="12" fill="url(#sfu-grad)"/>
-  <text x="440" y="54" text-anchor="middle" class="col-title">Stream SFU</text>
-  <!-- Cloud shape -->
-  <ellipse cx="440" cy="120" rx="50" ry="30" fill="#1e3a5f" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="440" y="124" text-anchor="middle" class="component">Edge Network</text>
-  <text x="440" y="172" text-anchor="middle" class="sub-label">500ms join latency</text>
-  <text x="440" y="188" text-anchor="middle" class="sub-label">&lt;30ms A/V latency</text>
-  <!-- SFU features -->
-  <rect x="370" y="210" width="140" height="24" rx="6" fill="#1e3a5f" stroke="#a78bfa" stroke-width="1"/>
-  <text x="440" y="226" text-anchor="middle" class="component">Audio Routing</text>
-  <rect x="370" y="244" width="140" height="24" rx="6" fill="#1e3a5f" stroke="#a78bfa" stroke-width="1"/>
-  <text x="440" y="260" text-anchor="middle" class="component">Video Forwarding</text>
-  <rect x="370" y="278" width="140" height="24" rx="6" fill="#1e3a5f" stroke="#a78bfa" stroke-width="1"/>
-  <text x="440" y="294" text-anchor="middle" class="component">Custom Events</text>
-  <rect x="370" y="312" width="140" height="24" rx="6" fill="#1e3a5f" stroke="#a78bfa" stroke-width="1"/>
-  <text x="440" y="328" text-anchor="middle" class="component">Track Priority</text>
+  <rect x="50" y="90" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="111" text-anchor="middle" class="t">Webcam + Microphone</text>
 
-  <!-- Column 3: AI Agent -->
-  <rect x="640" y="30" width="280" height="340" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-  <rect x="640" y="30" width="280" height="36" rx="12" fill="#8b5cf6"/>
-  <rect x="640" y="54" width="280" height="12" fill="#8b5cf6"/>
-  <text x="780" y="54" text-anchor="middle" class="col-title">AI Agent Pipeline</text>
+  <rect x="50" y="135" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="156" text-anchor="middle" class="t">Audio Output</text>
 
-  <!-- Pipeline steps -->
-  <rect x="670" y="82" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="101" class="component">1.</text>
-  <text x="700" y="101" class="flow-label">Deepgram STT</text>
-  <text x="838" y="101" class="sub-label">audio → text</text>
+  <rect x="50" y="185" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="206" text-anchor="middle" class="t">Avatar + UI + Editor</text>
 
-  <line x1="780" y1="112" x2="780" y2="126" stroke="#6d28d9" stroke-width="1.5"/>
-  <polygon points="776,124 780,132 784,124" fill="#6d28d9"/>
+  <rect x="50" y="230" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="251" text-anchor="middle" class="t">call.on("custom")</text>
 
-  <rect x="670" y="132" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="151" class="component">2.</text>
-  <text x="700" y="151" class="flow-label">YOLO Pose</text>
-  <text x="820" y="151" class="sub-label">video → metrics</text>
+  <rect x="50" y="280" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="301" text-anchor="middle" class="t">Convex Cloud DB</text>
 
-  <line x1="780" y1="162" x2="780" y2="176" stroke="#6d28d9" stroke-width="1.5"/>
-  <polygon points="776,174 780,182 784,174" fill="#6d28d9"/>
+  <rect x="50" y="325" width="180" height="32" rx="6" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="140" y="346" text-anchor="middle" class="t">Recharts Reports</text>
 
-  <rect x="670" y="182" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="201" class="component">3.</text>
-  <text x="700" y="201" class="flow-label">Gemini Flash LLM</text>
-  <text x="852" y="201" class="sub-label">+ 5 frames</text>
+  <!-- ========== STREAM SFU ========== -->
+  <rect x="300" y="30" width="220" height="400" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="300" y="30" width="220" height="42" rx="12" fill="url(#g1)"/>
+  <rect x="300" y="60" width="220" height="12" fill="url(#g1)"/>
+  <text x="410" y="58" text-anchor="middle" class="h">STREAM SFU</text>
 
-  <line x1="780" y1="212" x2="780" y2="226" stroke="#6d28d9" stroke-width="1.5"/>
-  <polygon points="776,224 780,232 784,224" fill="#6d28d9"/>
+  <rect x="320" y="90" width="180" height="44" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="410" y="111" text-anchor="middle" class="b">Edge Network</text>
+  <text x="410" y="127" text-anchor="middle" class="s">&lt;30ms latency</text>
 
-  <rect x="670" y="232" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="251" class="component">4.</text>
-  <text x="700" y="251" class="flow-label">Function Tools (9)</text>
-  <text x="855" y="251" class="sub-label">actions</text>
+  <rect x="320" y="152" width="180" height="32" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+  <text x="410" y="173" text-anchor="middle" class="t">Audio Routing</text>
 
-  <line x1="780" y1="262" x2="780" y2="276" stroke="#6d28d9" stroke-width="1.5"/>
-  <polygon points="776,274 780,282 784,274" fill="#6d28d9"/>
+  <rect x="320" y="197" width="180" height="32" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+  <text x="410" y="218" text-anchor="middle" class="t">Video Forwarding</text>
 
-  <rect x="670" y="282" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="301" class="component">5.</text>
-  <text x="700" y="301" class="flow-label">Edge TTS</text>
-  <text x="830" y="301" class="sub-label">text → audio</text>
+  <rect x="320" y="242" width="180" height="32" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+  <text x="410" y="263" text-anchor="middle" class="t">Custom Events</text>
 
-  <line x1="780" y1="312" x2="780" y2="326" stroke="#6d28d9" stroke-width="1.5"/>
-  <polygon points="776,324 780,332 784,324" fill="#6d28d9"/>
+  <rect x="320" y="287" width="180" height="32" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+  <text x="410" y="308" text-anchor="middle" class="t">Track Priority</text>
 
-  <rect x="670" y="332" width="220" height="30" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="680" y="351" class="component">6.</text>
-  <text x="700" y="351" class="flow-label">send_custom_event()</text>
+  <!-- ========== AI AGENT ========== -->
+  <rect x="570" y="30" width="300" height="400" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="570" y="30" width="300" height="42" rx="12" fill="#8b5cf6"/>
+  <rect x="570" y="60" width="300" height="12" fill="#8b5cf6"/>
+  <text x="720" y="58" text-anchor="middle" class="h">AI AGENT PIPELINE</text>
 
-  <!-- Arrows: Browser → SFU -->
-  <line x1="240" y1="105" x2="330" y2="105" stroke="#3b82f6" stroke-width="2"/>
-  <polygon points="328,100 340,105 328,110" fill="#3b82f6"/>
-  <text x="285" y="98" text-anchor="middle" class="sub-label">audio + video</text>
+  <!-- Step 1 -->
+  <rect x="590" y="90" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="111" class="b">1. Deepgram STT</text>
+  <text x="840" y="111" text-anchor="end" class="s">audio → text</text>
 
-  <!-- Arrows: SFU → Agent -->
-  <line x1="540" y1="105" x2="630" y2="105" stroke="#8b5cf6" stroke-width="2"/>
-  <polygon points="628,100 640,105 628,110" fill="#8b5cf6"/>
-  <text x="585" y="98" text-anchor="middle" class="sub-label">tracks</text>
+  <line x1="720" y1="122" x2="720" y2="136" stroke="#6d28d9" stroke-width="1.5"/>
+  <polygon points="716,134 720,142 724,134" fill="#6d28d9"/>
 
-  <!-- Arrows: Agent → SFU (audio back) -->
-  <line x1="640" y1="340" x2="548" y2="340" stroke="#8b5cf6" stroke-width="2"/>
-  <polygon points="550,335 540,340 550,345" fill="#8b5cf6"/>
-  <text x="590" y="358" text-anchor="middle" class="sub-label">agent audio + events</text>
+  <!-- Step 2 -->
+  <rect x="590" y="140" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="161" class="b">2. YOLO Pose</text>
+  <text x="840" y="161" text-anchor="end" class="s">video → metrics</text>
 
-  <!-- Arrows: SFU → Browser -->
-  <line x1="340" y1="290" x2="248" y2="290" stroke="#3b82f6" stroke-width="2"/>
-  <polygon points="250,285 240,290 250,295" fill="#3b82f6"/>
-  <text x="290" y="282" text-anchor="middle" class="sub-label">audio + events</text>
+  <line x1="720" y1="172" x2="720" y2="186" stroke="#6d28d9" stroke-width="1.5"/>
+  <polygon points="716,184 720,192 724,184" fill="#6d28d9"/>
+
+  <!-- Step 3 -->
+  <rect x="590" y="190" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="211" class="b">3. GPT-5.2 LLM</text>
+  <text x="840" y="211" text-anchor="end" class="s">+ 5 frames</text>
+
+  <line x1="720" y1="222" x2="720" y2="236" stroke="#6d28d9" stroke-width="1.5"/>
+  <polygon points="716,234 720,242 724,234" fill="#6d28d9"/>
+
+  <!-- Step 4 -->
+  <rect x="590" y="240" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="261" class="b">4. Function Tools (9)</text>
+  <text x="840" y="261" text-anchor="end" class="s">actions</text>
+
+  <line x1="720" y1="272" x2="720" y2="286" stroke="#6d28d9" stroke-width="1.5"/>
+  <polygon points="716,284 720,292 724,284" fill="#6d28d9"/>
+
+  <!-- Step 5 -->
+  <rect x="590" y="290" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="311" class="b">5. Edge TTS</text>
+  <text x="840" y="311" text-anchor="end" class="s">text → audio</text>
+
+  <line x1="720" y1="322" x2="720" y2="336" stroke="#6d28d9" stroke-width="1.5"/>
+  <polygon points="716,334 720,342 724,334" fill="#6d28d9"/>
+
+  <!-- Step 6 -->
+  <rect x="590" y="340" width="260" height="32" rx="6" fill="#2d1b69" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="600" y="361" class="b">6. send_custom_event()</text>
+  <text x="840" y="361" text-anchor="end" class="s">→ browser</text>
+
+  <!-- ========== ARROWS ========== -->
+  <!-- Browser → SFU top -->
+  <line x1="250" y1="106" x2="295" y2="106" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="293,101 303,106 293,111" fill="#3b82f6"/>
+  <text x="272" y="98" text-anchor="middle" class="s">audio + video</text>
+
+  <!-- SFU → Agent top -->
+  <line x1="520" y1="106" x2="565" y2="106" stroke="#8b5cf6" stroke-width="2"/>
+  <polygon points="563,101 573,106 563,111" fill="#8b5cf6"/>
+  <text x="542" y="98" text-anchor="middle" class="s">tracks</text>
+
+  <!-- Agent → SFU bottom -->
+  <line x1="570" y1="395" x2="525" y2="395" stroke="#8b5cf6" stroke-width="2"/>
+  <polygon points="527,390 517,395 527,400" fill="#8b5cf6"/>
+  <text x="547" y="418" text-anchor="middle" class="s">agent audio + events</text>
+
+  <!-- SFU → Browser bottom -->
+  <line x1="300" y1="395" x2="255" y2="395" stroke="#3b82f6" stroke-width="2"/>
+  <polygon points="257,390 247,395 257,400" fill="#3b82f6"/>
+  <text x="277" y="418" text-anchor="middle" class="s">audio + events</text>
 </svg>
