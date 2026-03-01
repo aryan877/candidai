@@ -155,12 +155,29 @@ class PoseProcessor(VideoProcessorPublisher, Warmable[Any]):
 
     _frame_count = 0
 
+    def _ensure_model(self) -> bool:
+        """Lazy-load YOLO model if warmup didn't fire for this instance."""
+        if self._model is not None:
+            return True
+        try:
+            from ultralytics import YOLO
+            logger.info("Lazy-loading YOLO pose model (warmup missed for this instance)")
+            self._model = YOLO("yolo11n-pose.pt")
+            logger.info("YOLO pose model lazy-loaded successfully")
+            return True
+        except Exception:
+            logger.exception("Failed to lazy-load YOLO model")
+            return False
+
     async def _on_frame(self, frame: av.VideoFrame) -> None:
         """Process a single video frame: run YOLO, draw skeleton, compute metrics."""
         self._frame_count += 1
         if self._frame_count <= 3 or self._frame_count % 100 == 0:
             logger.info("_on_frame called: frame #%d, size=%dx%d", self._frame_count, frame.width, frame.height)
-        if self._shutdown or self._model is None:
+        if self._shutdown:
+            await self._video_track.add_frame(frame)
+            return
+        if not self._ensure_model():
             await self._video_track.add_frame(frame)
             return
 
