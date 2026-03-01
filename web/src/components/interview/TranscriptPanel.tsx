@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, User } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 import type { Speaker } from "@/types/interview";
 
 export interface TranscriptEntry {
@@ -111,7 +112,9 @@ function EntryBubble({ entry }: { entry: TranscriptEntry }) {
         </span>
         <span className="ml-auto text-[10px] text-zinc-600">{time}</span>
       </div>
-      <p className="text-sm leading-relaxed text-zinc-300">{entry.text}</p>
+      <div className="prose-sm prose-invert max-w-none text-sm leading-relaxed text-zinc-300 [&_h1]:text-base [&_h1]:font-bold [&_h1]:text-zinc-200 [&_h2]:text-sm [&_h2]:font-semibold [&_h2]:text-zinc-200 [&_h3]:text-sm [&_h3]:font-medium [&_h3]:text-zinc-300 [&_strong]:text-zinc-200 [&_ul]:my-1 [&_ul]:list-disc [&_ul]:pl-4 [&_ol]:my-1 [&_ol]:list-decimal [&_ol]:pl-4 [&_li]:my-0.5 [&_code]:rounded [&_code]:bg-[#252525] [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-xs [&_code]:text-zinc-300 [&_p]:my-1">
+        <ReactMarkdown>{entry.text}</ReactMarkdown>
+      </div>
     </div>
   );
 }
