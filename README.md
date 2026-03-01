@@ -26,7 +26,7 @@
 
 | Feature | What It Does |
 |---------|-------------|
-| AI Interviewer | Adaptive multi-phase interview (intro, behavioral, technical, coding, wrap-up) powered by Gemini 3 Flash |
+| AI Interviewer | Adaptive multi-phase interview (intro, behavioral, technical, coding, wrap-up) powered by OpenAI GPT-5.2 with vision |
 | Body Language Analysis | Real-time posture, fidgeting, and eye-contact tracking via YOLO pose estimation |
 | Live Coding | Monaco editor with language-aware challenges, AI-evaluated submissions |
 | Performance Reports | Radar charts across 5 dimensions, timestamped transcript, integrity review |
@@ -55,12 +55,12 @@ The browser connects to the Python agent over **WebRTC** via Stream's edge netwo
 
 | Layer | Technology |
 |-------|-----------|
-| **LLM** | Google Gemini 3 Flash (via OpenRouter) |
+| **LLM** | OpenAI GPT-5.2 (vision + function calling via ChatCompletionsVLM) |
 | **STT** | Deepgram (`flux-general-en`) |
-| **TTS** | ElevenLabs (`eleven_flash_v2_5`) |
-| **Turn Detection** | Smart Turn Detection |
+| **TTS** | Edge TTS (free Microsoft neural, `en-US-AriaNeural`) |
+| **Turn Detection** | Deepgram endpointing (or Smart Turn Detection optional) |
 | **Pose Estimation** | YOLO (`yolo11n-pose.pt`) via Ultralytics |
-| **Transport** | Stream Video SDK (WebRTC) |
+| **Transport** | Stream Video SDK + Vision Agents SDK (WebRTC) |
 | **Frontend** | Next.js 15, React 19, Tailwind CSS v4, shadcn/ui, Framer Motion |
 | **Backend DB** | Convex Cloud (7 tables, auto-generated TypeScript types) |
 | **Code Editor** | Monaco Editor (`@monaco-editor/react`) |
@@ -231,12 +231,12 @@ Each phase adapts questions based on candidate responses using RAG-powered quest
 
 | Variable | Description |
 |----------|-------------|
-| `OPENROUTER_API_KEY` | OpenRouter API key for Gemini 3 Flash |
+| `OPENAI_API_KEY` | OpenAI API key (for GPT-5.2 vision) |
 | `STREAM_API_KEY` | Stream Video API key |
 | `STREAM_API_SECRET` | Stream Video API secret |
-| `DEEPGRAM_API_KEY` | Deepgram STT API key |
-| `ELEVENLABS_API_KEY` | ElevenLabs TTS API key |
+| `DEEPGRAM_API_KEY` | Deepgram STT API key (speech-to-text) |
 | `DATABASE_URL` | PostgreSQL connection string (for pgvector RAG) |
+| `EDGE_TTS_VOICE` | Microsoft Edge TTS voice (default: `en-US-AriaNeural`) |
 
 ---
 
